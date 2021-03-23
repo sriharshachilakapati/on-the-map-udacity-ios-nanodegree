@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }
+        
+        setShouldTapOnView(closeKeyboard: true)
     }
 
     @IBAction func onLoginButtonClicked() {

@@ -21,7 +21,13 @@ class LoginViewController: UIViewController {
             overrideUserInterfaceStyle = .light
         }
         
+        // Keyboard should be closed after tapping outside of text fields
         setShouldTapOnView(closeKeyboard: true)
+        
+        // Add some left padding to our text fields
+        [ userNameField, passwordField ].forEach { field in
+            field.addLeftPadding()
+        }
     }
 
     @IBAction func onLoginButtonClicked() {

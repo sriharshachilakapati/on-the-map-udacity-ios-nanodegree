@@ -35,5 +35,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func onSignUpButtonClicked() {
     }
+    
+    @IBAction func onUserNameInputChanged(_ sender: Any) {
+        loginButton.isEnabled = userNameField.text?.hasSuffix("@udacity.com") ?? false
+        loginButton.alpha = loginButton.isEnabled ? 1.0 : 0.5
+    }
 }
 

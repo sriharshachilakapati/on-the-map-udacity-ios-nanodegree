@@ -45,7 +45,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="cHf-NA-qBm"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.60641148109999998" green="0.2264176339" blue="0.031650824619999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="EaD-7t-m9l">
@@ -55,8 +55,8 @@
                                                     <constraint firstAttribute="height" constant="50" id="ILf-L1-i3Y"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.60641148109999998" green="0.2264176339" blue="0.031650824619999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="password"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubo-qD-KQN">
                                                 <rect key="frame" x="0.0" y="120" width="300" height="50"/>

@@ -29,6 +29,14 @@ class LoginViewController: UIViewController {
             field.addLeftPadding()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unsubscribeFromKeyboardNotifications()
+    }
 
     @IBAction func onLoginButtonClicked() {
     }

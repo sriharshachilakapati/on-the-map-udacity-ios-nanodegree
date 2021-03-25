@@ -15,6 +15,7 @@
 		20C412BA2605125800837102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C412B82605125800837102 /* LaunchScreen.storyboard */; };
 		20C412CC2607A36200837102 /* UIViewControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412CB2607A36200837102 /* UIViewControllerHelpers.swift */; };
 		20C412D8260B2ECE00837102 /* UITextFieldHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412D7260B2ECE00837102 /* UITextFieldHelpers.swift */; };
+		20C412DC260CA49E00837102 /* LoginViewControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412DB260CA49E00837102 /* LoginViewControllerHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		20C412BB2605125800837102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20C412CB2607A36200837102 /* UIViewControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelpers.swift; sourceTree = "<group>"; };
 		20C412D7260B2ECE00837102 /* UITextFieldHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldHelpers.swift; sourceTree = "<group>"; };
+		20C412DB260CA49E00837102 /* LoginViewControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				20C412CB2607A36200837102 /* UIViewControllerHelpers.swift */,
+				20C412DB260CA49E00837102 /* LoginViewControllerHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				20C412D8260B2ECE00837102 /* UITextFieldHelpers.swift in Sources */,
 				20C412B22605125700837102 /* LoginViewController.swift in Sources */,
 				20C412AE2605125700837102 /* AppDelegate.swift in Sources */,
+				20C412DC260CA49E00837102 /* LoginViewControllerHelpers.swift in Sources */,
 				20C412B02605125700837102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

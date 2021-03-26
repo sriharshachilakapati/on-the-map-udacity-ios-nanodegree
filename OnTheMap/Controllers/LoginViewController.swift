@@ -39,13 +39,23 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func onLoginButtonClicked() {
+        let request = SessionRequest(userName: userNameField.text!, password: passwordField.text!)
+        
+        udacitySessionApi.call(withPayload: request) { result in
+            switch result {
+                case .success(let response):
+                    print(response)
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
     
     @IBAction func onSignUpButtonClicked() {
     }
     
-    @IBAction func onUserNameInputChanged(_ sender: Any) {
-        loginButton.isEnabled = userNameField.text?.hasSuffix("@udacity.com") ?? false
+    @IBAction func onFormInputChanged(_ sender: Any) {
+        loginButton.isEnabled = !(userNameField.text?.isEmpty ?? true) && !(passwordField.text?.isEmpty ?? true)
         loginButton.alpha = loginButton.isEnabled ? 1.0 : 0.5
     }
 }

@@ -16,6 +16,10 @@
 		20C412CC2607A36200837102 /* UIViewControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412CB2607A36200837102 /* UIViewControllerHelpers.swift */; };
 		20C412D8260B2ECE00837102 /* UITextFieldHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412D7260B2ECE00837102 /* UITextFieldHelpers.swift */; };
 		20C412DC260CA49E00837102 /* LoginViewControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412DB260CA49E00837102 /* LoginViewControllerHelpers.swift */; };
+		20C412E0260CC67800837102 /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412DF260CC67800837102 /* SessionRequest.swift */; };
+		20C412E4260CC7C800837102 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412E3260CC7C800837102 /* SessionResponse.swift */; };
+		20C412E8260CF0EB00837102 /* ApiDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412E7260CF0EB00837102 /* ApiDefinition.swift */; };
+		20C412ED260D05C800837102 /* UdacityApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412EC260D05C800837102 /* UdacityApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		20C412CB2607A36200837102 /* UIViewControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelpers.swift; sourceTree = "<group>"; };
 		20C412D7260B2ECE00837102 /* UITextFieldHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldHelpers.swift; sourceTree = "<group>"; };
 		20C412DB260CA49E00837102 /* LoginViewControllerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerHelpers.swift; sourceTree = "<group>"; };
+		20C412DF260CC67800837102 /* SessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRequest.swift; sourceTree = "<group>"; };
+		20C412E3260CC7C800837102 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		20C412E7260CF0EB00837102 /* ApiDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDefinition.swift; sourceTree = "<group>"; };
+		20C412EC260D05C800837102 /* UdacityApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		20C412AC2605125700837102 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				20C412E6260CF0B900837102 /* Network */,
 				20C412C7260740CD00837102 /* Application */,
 				20C412C6260740AF00837102 /* Controllers */,
 				20C412C5260740A800837102 /* Views */,
@@ -75,6 +84,7 @@
 		20C412C4260740A000837102 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				20C412DE260CC62800837102 /* Session */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +132,24 @@
 				20C412D7260B2ECE00837102 /* UITextFieldHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		20C412DE260CC62800837102 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				20C412DF260CC67800837102 /* SessionRequest.swift */,
+				20C412E3260CC7C800837102 /* SessionResponse.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		20C412E6260CF0B900837102 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20C412E7260CF0EB00837102 /* ApiDefinition.swift */,
+				20C412EC260D05C800837102 /* UdacityApi.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +225,10 @@
 				20C412CC2607A36200837102 /* UIViewControllerHelpers.swift in Sources */,
 				20C412D8260B2ECE00837102 /* UITextFieldHelpers.swift in Sources */,
 				20C412B22605125700837102 /* LoginViewController.swift in Sources */,
+				20C412E8260CF0EB00837102 /* ApiDefinition.swift in Sources */,
+				20C412ED260D05C800837102 /* UdacityApi.swift in Sources */,
+				20C412E4260CC7C800837102 /* SessionResponse.swift in Sources */,
+				20C412E0260CC67800837102 /* SessionRequest.swift in Sources */,
 				20C412AE2605125700837102 /* AppDelegate.swift in Sources */,
 				20C412DC260CA49E00837102 /* LoginViewControllerHelpers.swift in Sources */,
 				20C412B02605125700837102 /* SceneDelegate.swift in Sources */,

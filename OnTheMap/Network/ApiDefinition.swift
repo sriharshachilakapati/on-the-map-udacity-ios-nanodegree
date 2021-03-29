@@ -7,30 +7,38 @@
 
 import Foundation
 
+typealias NilRequest = [String:String]
+
 struct ApiDefinition<RequestType: Codable, ResponseType: Codable> {
     typealias ApiCompletionHandler = (Result<ResponseType, Error>) -> Void
     
     let url: String
     let method: HttpMethod
     let getDecodableResponseRange: (Data) -> Range<Int>
-    let headers: [String : String]?
+    let headers: () -> [String : String]?
     
     func call(withPayload payload: RequestType, completion: @escaping ApiCompletionHandler) {
-        performCall(withPayload: payload, completion: completion)
+        performCall(withPayload: payload, andPathParameters: [:], completion: completion)
     }
     
     func call(completion: @escaping ApiCompletionHandler) {
-        performCall(withPayload: nil, completion: completion)
+        performCall(withPayload: nil, andPathParameters: [:], completion: completion)
     }
     
-    private func performCall(withPayload payload: RequestType?, completion: @escaping ApiCompletionHandler) {
-        let url = URL(string: self.url)!
+    private func performCall(withPayload payload: RequestType?, andPathParameters pathParameters: [String : String], completion: @escaping ApiCompletionHandler) {
+        var urlString = self.url
+        
+        for pathParameter in pathParameters {
+            urlString = urlString.replacingOccurrences(of: "\(pathParameter.key)", with: pathParameter.value)
+        }
+        
+        let url = URL(string: urlString)!
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 500)
         
         request.httpMethod = method.rawValue
         
         // Set the headers
-        if let headers = headers {
+        if let headers = headers() {
             for header in headers {
                 request.addValue(header.value, forHTTPHeaderField: header.key)
             }
@@ -43,7 +51,7 @@ struct ApiDefinition<RequestType: Codable, ResponseType: Codable> {
                 
                 switch method {
                     case .get, .delete:
-                        // GET uses Query parameters
+                        // GET and DELETE uses Query parameters
                         let queryParams = (try? JSONSerialization.jsonObject(with: encodedPayload, options: []) as? [String: Any] ?? [:])!
                         request.setQueryParameters(queryParams)
                         

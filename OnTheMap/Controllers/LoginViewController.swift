@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginButtonClicked() {
         let request = SessionRequest(userName: userNameField.text!, password: passwordField.text!)
         
-        udacitySessionApi.call(withPayload: request) { result in
+        udacitySessionCreateApi.call(withPayload: request) { result in
             switch result {
                 case .success(let response):
                     print(response)

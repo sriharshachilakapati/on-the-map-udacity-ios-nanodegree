@@ -46,3 +46,18 @@ let udacitySessionDeleteApi = ApiDefinition<NilRequest, SessionInfo>(
         return headers
     }
 )
+
+let udacityGetUserDataApi = ApiDefinition<NilRequest, UserResponse>(
+    url: baseUrl + "/v1/users/:user_id",
+    method: .get,
+    getDecodableResponseRange: getDecodableDataRange(data:),
+    headers: { [:] }
+)
+
+let udacityGetUserLocationsApi = ApiDefinition<UserLocationRequest, UserLocationResponse>(
+    url: baseUrl + "/v1/StudentLocation",
+    method: .get,
+    getDecodableResponseRange: getDecodableDataRange(data:),
+    headers: { [:] }
+)
+

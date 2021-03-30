@@ -24,6 +24,9 @@
 		20C412F72612436E00837102 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412F62612436E00837102 /* UserResponse.swift */; };
 		20C412FB2612464800837102 /* UserLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412FA2612464800837102 /* UserLocationResponse.swift */; };
 		20C4130026124D2300837102 /* UserLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412FF26124D2300837102 /* UserLocationRequest.swift */; };
+		20C413032612523600837102 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C413022612523600837102 /* AppSession.swift */; };
+		20C413092613B18100837102 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C413082613B18100837102 /* MapKit.framework */; };
+		20C4130C2613B27500837102 /* OnTheMapTabVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		20C412F62612436E00837102 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		20C412FA2612464800837102 /* UserLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationResponse.swift; sourceTree = "<group>"; };
 		20C412FF26124D2300837102 /* UserLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationRequest.swift; sourceTree = "<group>"; };
+		20C413022612523600837102 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
+		20C413082613B18100837102 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapTabVewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C413092613B18100837102 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +71,7 @@
 			children = (
 				20C412AC2605125700837102 /* OnTheMap */,
 				20C412AB2605125700837102 /* Products */,
+				20C413072613B18100837102 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +121,7 @@
 			children = (
 				20C412CA2607A34600837102 /* Helpers */,
 				20C412B12605125700837102 /* LoginViewController.swift */,
+				20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 			children = (
 				20C412AD2605125700837102 /* AppDelegate.swift */,
 				20C412AF2605125700837102 /* SceneDelegate.swift */,
+				20C413022612523600837102 /* AppSession.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -178,6 +188,14 @@
 				20C412FF26124D2300837102 /* UserLocationRequest.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		20C413072613B18100837102 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20C413082613B18100837102 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C413032612523600837102 /* AppSession.swift in Sources */,
 				20C412CC2607A36200837102 /* UIViewControllerHelpers.swift in Sources */,
+				20C4130C2613B27500837102 /* OnTheMapTabVewController.swift in Sources */,
 				20C412D8260B2ECE00837102 /* UITextFieldHelpers.swift in Sources */,
 				20C412B22605125700837102 /* LoginViewController.swift in Sources */,
 				20C4130026124D2300837102 /* UserLocationRequest.swift in Sources */,

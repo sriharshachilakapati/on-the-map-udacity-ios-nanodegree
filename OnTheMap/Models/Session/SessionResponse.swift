@@ -8,7 +8,7 @@
 import Foundation
 
 struct SessionResponse: Codable {
-    let account: AccountInfo
+    let account: AccountInfo?
     let session: SessionInfo
 }
 

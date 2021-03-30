@@ -24,7 +24,7 @@ let udacitySessionCreateApi = ApiDefinition<SessionRequest, SessionResponse>(
     ]}
 )
 
-let udacitySessionDeleteApi = ApiDefinition<NilRequest, SessionInfo>(
+let udacitySessionDeleteApi = ApiDefinition<NilRequest, SessionResponse>(
     url: baseUrl + "/v1/session",
     method: .delete,
     getDecodableResponseRange: getDecodableDataRange(data:),

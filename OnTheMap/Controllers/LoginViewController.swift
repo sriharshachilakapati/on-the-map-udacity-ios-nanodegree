@@ -44,7 +44,13 @@ class LoginViewController: UIViewController {
         udacitySessionCreateApi.call(withPayload: request) { result in
             switch result {
                 case .success(let response):
-                    print(response)
+                    AppSession.current = response.session
+                    AppSession.userAccount = response.account
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "toHomeScreen", sender: LoginViewController.self)
+                    }
+                    
                 case .failure(let error):
                     print(error)
             }

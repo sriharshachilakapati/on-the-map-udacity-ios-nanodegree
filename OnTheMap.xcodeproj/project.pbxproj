@@ -27,6 +27,8 @@
 		20C413032612523600837102 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C413022612523600837102 /* AppSession.swift */; };
 		20C413092613B18100837102 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C413082613B18100837102 /* MapKit.framework */; };
 		20C4130C2613B27500837102 /* OnTheMapTabVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */; };
+		20C4130F2614D54300837102 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4130E2614D54300837102 /* MapViewController.swift */; };
+		20C413122614D69A00837102 /* PinsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C413112614D69A00837102 /* PinsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		20C413022612523600837102 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
 		20C413082613B18100837102 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapTabVewController.swift; sourceTree = "<group>"; };
+		20C4130E2614D54300837102 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		20C413112614D69A00837102 /* PinsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				20C412CA2607A34600837102 /* Helpers */,
 				20C412B12605125700837102 /* LoginViewController.swift */,
 				20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */,
+				20C4130E2614D54300837102 /* MapViewController.swift */,
+				20C413112614D69A00837102 /* PinsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,9 +287,11 @@
 				20C412E0260CC67800837102 /* SessionRequest.swift in Sources */,
 				20C412AE2605125700837102 /* AppDelegate.swift in Sources */,
 				20C412DC260CA49E00837102 /* LoginViewControllerHelpers.swift in Sources */,
+				20C413122614D69A00837102 /* PinsTableViewController.swift in Sources */,
 				20C412B02605125700837102 /* SceneDelegate.swift in Sources */,
 				20C412F72612436E00837102 /* UserResponse.swift in Sources */,
 				20C412FB2612464800837102 /* UserLocationResponse.swift in Sources */,
+				20C4130F2614D54300837102 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

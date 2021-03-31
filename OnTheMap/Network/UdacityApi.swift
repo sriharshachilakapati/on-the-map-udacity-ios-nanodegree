@@ -57,7 +57,7 @@ let udacityGetUserDataApi = ApiDefinition<NilRequest, UserResponse>(
 let udacityGetUserLocationsApi = ApiDefinition<UserLocationRequest, UserLocationResponse>(
     url: baseUrl + "/v1/StudentLocation",
     method: .get,
-    getDecodableResponseRange: getDecodableDataRange(data:),
+    getDecodableResponseRange: { data in 0..<data.count },
     headers: { [:] }
 )
 

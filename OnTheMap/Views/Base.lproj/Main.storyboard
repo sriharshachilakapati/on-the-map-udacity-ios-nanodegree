@@ -339,7 +339,7 @@
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your location here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-Rw-R7O">
                                 <rect key="frame" x="0.0" y="294" width="414" height="368"/>
-                                <color key="backgroundColor" red="0.26449506914143106" green="0.39687106525892563" blue="0.66972573241420452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.22534221547463515" green="0.38442763436560429" blue="0.6810250119326704" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
@@ -392,7 +392,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hoH-BH-dcI"/>
-                        <color key="backgroundColor" red="0.82632475002103811" green="0.83874625783238488" blue="0.85425658784349756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.81985861059999998" green="0.83891528839999996" blue="0.85490554569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="UV7-0h-nhP" firstAttribute="bottom" secondItem="hoH-BH-dcI" secondAttribute="bottom" id="0dW-c3-Dr0"/>
                             <constraint firstItem="JVP-OV-VJT" firstAttribute="trailing" secondItem="hoH-BH-dcI" secondAttribute="trailing" id="6Bp-Mx-ltz"/>
@@ -416,11 +416,111 @@
                     </view>
                     <connections>
                         <outlet property="locationInputTextField" destination="rfK-Rw-R7O" id="NvD-ab-8bM"/>
+                        <segue destination="LsT-Lc-j1t" kind="presentation" identifier="toLinkCollectorScreen" modalPresentationStyle="fullScreen" id="Wrm-QK-KQ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZh-yl-aT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2398.5507246376815" y="136.60714285714286"/>
+            <point key="canvasLocation" x="2425" y="137"/>
+        </scene>
+        <!--Link Fetcher Screen View Controller-->
+        <scene sceneID="mkZ-eO-Edq">
+            <objects>
+                <viewController id="LsT-Lc-j1t" customClass="LinkFetcherScreenViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="STP-hP-2jM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AHO-mI-5DR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a link to Share" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="loI-YL-yho">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                        <color key="backgroundColor" red="0.22534221547463515" green="0.38442763436560429" blue="0.6810250119326704" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="pYs-6G-zro"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBj-PR-tIG">
+                                        <rect key="frame" x="0.0" y="250" width="414" height="646"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XBB-vj-qJW">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
+                                            </mapView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXl-pb-tF4">
+                                                <rect key="frame" x="107" y="515" width="200" height="61"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DD6-Jh-kdC"/>
+                                                    <constraint firstAttribute="height" constant="61" id="QpO-0b-kAI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <state key="normal" title="Submit">
+                                                    <color key="titleColor" red="0.34278728079999998" green="0.3483461947" blue="0.36247844410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onFindTheMapButtonClicked:" destination="s2r-eD-kUX" eventType="touchUpInside" id="nWT-ET-tU9"/>
+                                                    <action selector="onSubmitButtonClicked" destination="LsT-Lc-j1t" eventType="touchUpInside" id="IJq-0d-QRl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="XBB-vj-qJW" firstAttribute="top" secondItem="JBj-PR-tIG" secondAttribute="top" id="1Er-AC-Gmi"/>
+                                            <constraint firstItem="OXl-pb-tF4" firstAttribute="centerX" secondItem="JBj-PR-tIG" secondAttribute="centerX" id="5RB-1z-rx1"/>
+                                            <constraint firstItem="XBB-vj-qJW" firstAttribute="leading" secondItem="JBj-PR-tIG" secondAttribute="leading" id="5ua-aV-FIR"/>
+                                            <constraint firstItem="OXl-pb-tF4" firstAttribute="bottom" secondItem="XBB-vj-qJW" secondAttribute="bottom" constant="-70" id="M5Q-hp-7mw"/>
+                                            <constraint firstItem="XBB-vj-qJW" firstAttribute="trailing" secondItem="JBj-PR-tIG" secondAttribute="trailing" id="Q8j-tM-csa"/>
+                                            <constraint firstItem="XBB-vj-qJW" firstAttribute="bottom" secondItem="JBj-PR-tIG" secondAttribute="bottom" id="QKC-ER-w1f"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QR-2H-wA8">
+                                <rect key="frame" x="342" y="44" width="52" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCancelButtonClicked" destination="s2r-eD-kUX" eventType="touchUpInside" id="NOd-iW-1Vc"/>
+                                    <action selector="onCancelButtonClicked" destination="LsT-Lc-j1t" eventType="touchUpInside" id="duf-Hr-LON"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jnv-IN-TeC"/>
+                        <color key="backgroundColor" red="0.22534221547463515" green="0.38442763436560429" blue="0.6810250119326704" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6QR-2H-wA8" firstAttribute="top" secondItem="jnv-IN-TeC" secondAttribute="top" id="H7o-xt-ghN"/>
+                            <constraint firstItem="AHO-mI-5DR" firstAttribute="leading" secondItem="jnv-IN-TeC" secondAttribute="leading" id="VBA-bC-Mcf"/>
+                            <constraint firstItem="AHO-mI-5DR" firstAttribute="bottom" secondItem="STP-hP-2jM" secondAttribute="bottom" id="aHf-VB-0j8"/>
+                            <constraint firstItem="AHO-mI-5DR" firstAttribute="trailing" secondItem="jnv-IN-TeC" secondAttribute="trailing" id="ahH-rL-IoT"/>
+                            <constraint firstItem="AHO-mI-5DR" firstAttribute="top" secondItem="STP-hP-2jM" secondAttribute="top" id="e1E-kd-Cq5"/>
+                            <constraint firstItem="6QR-2H-wA8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jnv-IN-TeC" secondAttribute="leading" id="mCt-Xi-Ebb"/>
+                            <constraint firstItem="6QR-2H-wA8" firstAttribute="trailing" secondItem="jnv-IN-TeC" secondAttribute="trailing" constant="-20" id="mHa-0G-MxI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="linkInputTextField" destination="loI-YL-yho" id="DvD-uO-DA5"/>
+                        <outlet property="mapView" destination="XBB-vj-qJW" id="8BY-P7-T1P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LHt-Ub-4Mc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3153.6231884057975" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>

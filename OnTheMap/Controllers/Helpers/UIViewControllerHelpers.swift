@@ -33,4 +33,14 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func dismiss(levels: Int, animated: Bool, completion: (() -> Void)?) {
+        var presentingVC = presentingViewController
+        
+        for _ in 1..<levels {
+            presentingVC = presentingVC!.presentingViewController
+        }
+        
+        presentingVC!.dismiss(animated: animated, completion: completion)
+    }
 }

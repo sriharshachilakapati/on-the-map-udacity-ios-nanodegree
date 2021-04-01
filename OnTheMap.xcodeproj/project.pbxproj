@@ -30,6 +30,7 @@
 		20C4130F2614D54300837102 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4130E2614D54300837102 /* MapViewController.swift */; };
 		20C413122614D69A00837102 /* PinsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C413112614D69A00837102 /* PinsTableViewController.swift */; };
 		20C4131526150C6E00837102 /* UIViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4131426150C6E00837102 /* UIViewHelpers.swift */; };
+		20C4131826165BEB00837102 /* LocationFetcherScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4131726165BEB00837102 /* LocationFetcherScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		20C4130E2614D54300837102 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		20C413112614D69A00837102 /* PinsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsTableViewController.swift; sourceTree = "<group>"; };
 		20C4131426150C6E00837102 /* UIViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelpers.swift; sourceTree = "<group>"; };
+		20C4131726165BEB00837102 /* LocationFetcherScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				20C4130B2613B27500837102 /* OnTheMapTabVewController.swift */,
 				20C4130E2614D54300837102 /* MapViewController.swift */,
 				20C413112614D69A00837102 /* PinsTableViewController.swift */,
+				20C4131726165BEB00837102 /* LocationFetcherScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				20C412E8260CF0EB00837102 /* ApiDefinition.swift in Sources */,
 				20C412ED260D05C800837102 /* UdacityApi.swift in Sources */,
 				20C412F2260E62C200837102 /* URLRequestHelpers.swift in Sources */,
+				20C4131826165BEB00837102 /* LocationFetcherScreenViewController.swift in Sources */,
 				20C412E4260CC7C800837102 /* SessionResponse.swift in Sources */,
 				20C412E0260CC67800837102 /* SessionRequest.swift in Sources */,
 				20C412AE2605125700837102 /* AppDelegate.swift in Sources */,

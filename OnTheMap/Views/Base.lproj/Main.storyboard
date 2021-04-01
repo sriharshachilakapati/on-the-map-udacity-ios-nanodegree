@@ -286,10 +286,10 @@
             </objects>
             <point key="canvasLocation" x="1641" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Fetcher Screen-->
         <scene sceneID="yEm-Wc-bru">
             <objects>
-                <viewController id="s2r-eD-kUX" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="s2r-eD-kUX" userLabel="Location Fetcher Screen" customClass="LocationFetcherScreenViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgi-GN-MYj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +300,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2I9-jO-P0E" userLabel="Text Stack View">
                                         <rect key="frame" x="0.0" y="39.5" width="414" height="171"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Where are you" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rhY-Iv-dyR">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Where are you" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhY-Iv-dyR">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="57" id="xFL-am-34c"/>
@@ -309,7 +309,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="studying" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-7D-e1Z">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="studying" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lz-7D-e1Z">
                                                 <rect key="frame" x="0.0" y="57" width="414" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="57" id="YF8-LW-Nxz"/>
@@ -318,7 +318,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="34"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="today?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cZg-Pd-MrC">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="today?" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZg-Pd-MrC">
                                                 <rect key="frame" x="0.0" y="114" width="414" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="57" id="uff-dH-tRU"/>
@@ -358,7 +358,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="61" id="9vy-vF-Gzb"/>
-                                            <constraint firstAttribute="width" constant="268" id="EV9-3L-AC6"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="EV9-3L-AC6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <state key="normal" title="Find on the Map">
@@ -369,6 +369,9 @@
                                                 <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFindTheMapButtonClicked:" destination="s2r-eD-kUX" eventType="touchUpInside" id="0wO-Zy-Rra"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -377,16 +380,19 @@
                                     <constraint firstItem="0OR-Ha-LWG" firstAttribute="centerX" secondItem="UV7-0h-nhP" secondAttribute="centerX" id="c12-bp-9Dv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd9-v0-7I5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd9-v0-7I5">
                                 <rect key="frame" x="342" y="44" width="52" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.1574430466" green="0.18746960160000001" blue="0.2274565399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonClicked" destination="s2r-eD-kUX" eventType="touchUpInside" id="hcm-jv-QY7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hoH-BH-dcI"/>
-                        <color key="backgroundColor" red="0.66473077497310118" green="0.67551058311555023" blue="0.7029157455591224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.82632475002103811" green="0.83874625783238488" blue="0.85425658784349756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="UV7-0h-nhP" firstAttribute="bottom" secondItem="hoH-BH-dcI" secondAttribute="bottom" id="0dW-c3-Dr0"/>
                             <constraint firstItem="JVP-OV-VJT" firstAttribute="trailing" secondItem="hoH-BH-dcI" secondAttribute="trailing" id="6Bp-Mx-ltz"/>
@@ -397,16 +403,20 @@
                             <constraint firstItem="UV7-0h-nhP" firstAttribute="leading" secondItem="hoH-BH-dcI" secondAttribute="leading" id="YhA-yf-h7D"/>
                             <constraint firstItem="UV7-0h-nhP" firstAttribute="trailing" secondItem="hoH-BH-dcI" secondAttribute="trailing" id="c9Q-fa-U8e"/>
                             <constraint firstItem="rfK-Rw-R7O" firstAttribute="leading" secondItem="hoH-BH-dcI" secondAttribute="leading" id="eDj-NF-e2v"/>
+                            <constraint firstItem="xd9-v0-7I5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hoH-BH-dcI" secondAttribute="leading" id="hk5-0R-dxq"/>
                             <constraint firstItem="hoH-BH-dcI" firstAttribute="trailing" secondItem="rfK-Rw-R7O" secondAttribute="trailing" id="ovv-QW-OgV"/>
                             <constraint firstItem="rfK-Rw-R7O" firstAttribute="bottom" secondItem="UV7-0h-nhP" secondAttribute="top" id="vF5-yh-Z14"/>
                             <constraint firstItem="JVP-OV-VJT" firstAttribute="leading" secondItem="hoH-BH-dcI" secondAttribute="leading" id="wfT-an-NyW"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="16"/>
+                                <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="locationInputTextField" destination="rfK-Rw-R7O" id="NvD-ab-8bM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZh-yl-aT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,8 @@ class LinkFetcherScreenViewController: UIViewController {
     @IBOutlet weak var linkInputTextField: UITextField!
     
     var location: String = ""
+    var latitude: Double = 0
+    var longitude: Double = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,9 @@ class LinkFetcherScreenViewController: UIViewController {
                 annotation.title = self.location
                 self.mapView.addAnnotation(annotation)
                 
+                self.latitude = place.latitude
+                self.longitude = place.longitude
+                
                 let region = MKCoordinateRegion(center: place, latitudinalMeters: 10000, longitudinalMeters: 10000)
                 self.mapView.setRegion(region, animated: true)
             }
@@ -55,6 +60,28 @@ class LinkFetcherScreenViewController: UIViewController {
     }
     
     @IBAction func onSubmitButtonClicked() {
-        // TODO: Implement later
+        guard let url = linkInputTextField.text else { return }
+        
+        let request = PostUserLocationRequest(
+            uniqueKey: AppSession.userAccount!.key,
+            firstName: AppSession.userInfo!.firstName,
+            lastName: AppSession.userInfo!.lastName,
+            mapString: location,
+            mediaURL: url,
+            latitude: latitude,
+            longitude: longitude
+        )
+        
+        udacityPostUserLocationApi.call(withPayload: request) { result in
+            switch result {
+                case .success(_):
+                    DispatchQueue.main.async {
+                        self.dismiss(levels: 2, animated: true, completion: nil)
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
 }

@@ -21,6 +21,10 @@ struct ApiDefinition<RequestType: Codable, ResponseType: Codable> {
         performCall(withPayload: payload, andPathParameters: [:], completion: completion)
     }
     
+    func call(withPathParameters parameters: [String : String], completion: @escaping ApiCompletionHandler) {
+        performCall(withPayload: nil, andPathParameters: parameters, completion: completion)
+    }
+    
     func call(completion: @escaping ApiCompletionHandler) {
         performCall(withPayload: nil, andPathParameters: [:], completion: completion)
     }

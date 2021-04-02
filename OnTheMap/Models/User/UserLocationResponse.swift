@@ -20,3 +20,8 @@ struct UserLocation: Codable {
     let mediaURL: String
     let objectId: String
 }
+
+struct PostUserLocationResponse: Codable {
+    let createdAt: String
+    let objectId: String
+}

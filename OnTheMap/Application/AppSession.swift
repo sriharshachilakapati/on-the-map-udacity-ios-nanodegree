@@ -10,4 +10,5 @@ import Foundation
 struct AppSession {
     static var current: SessionInfo?
     static var userAccount: AccountInfo?
+    static var userInfo: UserResponse?
 }

@@ -47,10 +47,19 @@ class LoginViewController: UIViewController {
                     AppSession.current = response.session
                     AppSession.userAccount = response.account
                     
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "toHomeScreen", sender: LoginViewController.self)
+                    udacityGetUserDataApi.call(withPathParameters: [ userIdPathParam: response.account!.key ]) { result in
+                        if case Result.failure(let error) = result {
+                            print(error)
+                            return
+                        }
+                        
+                        AppSession.userInfo = try? result.get()
+                        
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "toHomeScreen", sender: LoginViewController.self)
+                        }
                     }
-                    
+
                 case .failure(let error):
                     print(error)
             }

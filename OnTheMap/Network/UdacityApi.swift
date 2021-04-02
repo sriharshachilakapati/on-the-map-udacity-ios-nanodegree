@@ -9,14 +9,13 @@ import Foundation
 
 let baseUrl = "https://onthemap-api.udacity.com"
 
-func getDecodableDataRange(data: Data) -> Range<Int> {
-    return 5..<data.count
-}
+let getDecodableDataRangeForUdacityApi = { (data: Data) in 5..<data.count }
+let getDecodableDataRangeForParseApi   = { (data: Data) in 0..<data.count }
 
 let udacitySessionCreateApi = ApiDefinition<SessionRequest, SessionResponse>(
     url: baseUrl + "/v1/session",
     method: .post,
-    getDecodableResponseRange: getDecodableDataRange(data:),
+    getDecodableResponseRange: getDecodableDataRangeForUdacityApi,
     
     headers: {[
         "Content-Type": "application/json",
@@ -27,7 +26,7 @@ let udacitySessionCreateApi = ApiDefinition<SessionRequest, SessionResponse>(
 let udacitySessionDeleteApi = ApiDefinition<NilRequest, SessionResponse>(
     url: baseUrl + "/v1/session",
     method: .delete,
-    getDecodableResponseRange: getDecodableDataRange(data:),
+    getDecodableResponseRange: getDecodableDataRangeForUdacityApi,
     
     headers: {
         var headers: [String : String] = [:]
@@ -47,17 +46,27 @@ let udacitySessionDeleteApi = ApiDefinition<NilRequest, SessionResponse>(
     }
 )
 
+let userIdPathParam = ":user_id"
+
 let udacityGetUserDataApi = ApiDefinition<NilRequest, UserResponse>(
-    url: baseUrl + "/v1/users/:user_id",
+    url: baseUrl + "/v1/users/\(userIdPathParam)",
     method: .get,
-    getDecodableResponseRange: getDecodableDataRange(data:),
+    getDecodableResponseRange: getDecodableDataRangeForUdacityApi,
     headers: { [:] }
 )
 
 let udacityGetUserLocationsApi = ApiDefinition<UserLocationRequest, UserLocationResponse>(
     url: baseUrl + "/v1/StudentLocation",
     method: .get,
-    getDecodableResponseRange: { data in 0..<data.count },
+    getDecodableResponseRange: getDecodableDataRangeForParseApi,
     headers: { [:] }
 )
 
+let udacityPostUserLocationApi = ApiDefinition<PostUserLocationRequest, PostUserLocationResponse>(
+    url: baseUrl + "/v1/StudentLocation",
+    method: .post,
+    getDecodableResponseRange: getDecodableDataRangeForParseApi,
+    headers: {[
+        "Content-Type": "application/json"
+    ]}
+)

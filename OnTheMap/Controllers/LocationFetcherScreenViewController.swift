@@ -16,6 +16,8 @@ class LocationFetcherScreenViewController: UIViewController {
         setShouldTapOnView(closeKeyboard: true)
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .portrait }
+    
     @IBAction private func onCancelButtonClicked() {
         dismiss(animated: true, completion: nil)
     }

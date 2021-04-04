@@ -261,14 +261,14 @@
             <objects>
                 <tabBarController id="ulg-G7-9b2" customClass="OnTheMapTabViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="On The Map" id="vCi-HS-B9Z">
-                        <barButtonItem key="leftBarButtonItem" title="Add Pin" image="pin.fill" catalog="system" id="iC4-7b-fnS">
-                            <connections>
-                                <segue destination="s2r-eD-kUX" kind="presentation" modalPresentationStyle="fullScreen" id="FPT-qL-DPf"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Oi7-6E-URk">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Oi7-6E-URk">
                             <connections>
                                 <action selector="doLogout" destination="ulg-G7-9b2" id="kSs-Qr-Bj9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Pin" image="pin.fill" catalog="system" id="iC4-7b-fnS">
+                            <connections>
+                                <segue destination="s2r-eD-kUX" kind="presentation" modalPresentationStyle="fullScreen" id="FPT-qL-DPf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

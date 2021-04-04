@@ -5,7 +5,6 @@
 //  Created by Sri Harsha Chilakapati on 21/03/21.
 //
 
-import Foundation
 import UIKit
 
 /**
@@ -13,16 +12,31 @@ import UIKit
  * class is like a Swift Dictionary, but gives more control over how the references are stored. I'm using weak
  * reference for keys so that when the ViewController is claimed by ARC, the entry in this map is also removed.
  */
-private var uiViewControllersMap: NSMapTable<UIViewController, UITapGestureRecognizer> = NSMapTable.weakToStrongObjects()
+fileprivate var uiViewControllerStateMap: NSMapTable<UIViewController, UIViewControllerExtensionState> = NSMapTable.weakToStrongObjects()
 
 extension UIViewController {
+    //MARK: - Extension state getter
+    fileprivate var extensionState: UIViewControllerExtensionState {
+        get {
+            var state = uiViewControllerStateMap.object(forKey: self)
+            
+            if state == nil {
+                state = UIViewControllerExtensionState()
+                uiViewControllerStateMap.setObject(state, forKey: self)
+            }
+            
+            return state!
+        }
+    }
+
+    //MARK: - Keyboard extensions
     func setShouldTapOnView(closeKeyboard close: Bool) {
-        var tapsRecognizer = uiViewControllersMap.object(forKey: self)
+        var tapsRecognizer = extensionState.tapGestureRecognizer
         
         if tapsRecognizer == nil {
             tapsRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
             
-            uiViewControllersMap.setObject(tapsRecognizer, forKey: self)
+            extensionState.tapGestureRecognizer = tapsRecognizer
             view.addGestureRecognizer(tapsRecognizer!)
         }
         
@@ -34,6 +48,7 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    //MARK: - ViewController extensions
     func dismiss(levels: Int, animated: Bool, completion: (() -> Void)?) {
         var presentingVC = presentingViewController
         
@@ -42,5 +57,43 @@ extension UIViewController {
         }
         
         presentingVC!.dismiss(animated: animated, completion: completion)
+    }
+    
+    //MARK: - Progress indication extensions
+    func showProgressIndicator(completion: @escaping () -> Void) {
+        if extensionState.progressDialog != nil {
+            return
+        }
+        
+        if !Thread.isMainThread {
+            DispatchQueue.main.async {
+                self.showProgressIndicator(completion: completion)
+            }
+            
+            return
+        }
+        
+        let progressDialog = self.storyboard?.instantiateViewController(withIdentifier: "ActivityIndicatorViewController")
+        progressDialog?.modalPresentationStyle = .overCurrentContext
+        progressDialog?.modalTransitionStyle = .crossDissolve
+        extensionState.progressDialog = progressDialog
+        
+        
+        self.present(progressDialog!, animated: true, completion: completion)
+    }
+    
+    func hideProgressIndicator(completion: @escaping () -> Void = {}) {
+        if !Thread.isMainThread {
+            DispatchQueue.main.async {
+                self.hideProgressIndicator(completion: completion)
+            }
+            
+            return
+        }
+        
+        extensionState.progressDialog?.dismiss(animated: true) {
+            self.extensionState.progressDialog = nil
+            completion()
+        }
     }
 }

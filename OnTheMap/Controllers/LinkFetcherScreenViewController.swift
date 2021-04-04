@@ -22,6 +22,7 @@ class LinkFetcherScreenViewController: UIViewController {
         setShouldTapOnView(closeKeyboard: true)
 
         let geocoder = CLGeocoder()
+        
         geocoder.geocodeAddressString(location) { (placemarks, error) in
             guard let place = placemarks?.first?.location?.coordinate else {
                 print(error!)
@@ -72,15 +73,17 @@ class LinkFetcherScreenViewController: UIViewController {
             longitude: longitude
         )
         
-        udacityPostUserLocationApi.call(withPayload: request) { result in
-            switch result {
-                case .success(_):
-                    DispatchQueue.main.async {
-                        self.dismiss(levels: 2, animated: true, completion: nil)
+        showProgressIndicator {
+            udacityPostUserLocationApi.call(withPayload: request) { result in
+                self.hideProgressIndicator {
+                    switch result {
+                        case .success(_):
+                            self.dismiss(levels: 2, animated: true, completion: nil)
+                            
+                        case .failure(let error):
+                            print(error)
                     }
-                    
-                case .failure(let error):
-                    print(error)
+                }
             }
         }
     }

@@ -41,27 +41,30 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginButtonClicked() {
         let request = SessionRequest(userName: userNameField.text!, password: passwordField.text!)
         
-        udacitySessionCreateApi.call(withPayload: request) { result in
-            switch result {
-                case .success(let response):
-                    AppSession.current = response.session
-                    AppSession.userAccount = response.account
-                    
-                    udacityGetUserDataApi.call(withPathParameters: [ userIdPathParam: response.account!.key ]) { result in
-                        if case Result.failure(let error) = result {
-                            print(error)
-                            return
-                        }
+        showProgressIndicator {
+            udacitySessionCreateApi.call(withPayload: request) { result in
+                switch result {
+                    case .success(let response):
+                        AppSession.current = response.session
+                        AppSession.userAccount = response.account
                         
-                        AppSession.userInfo = try? result.get()
-                        
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "toHomeScreen", sender: LoginViewController.self)
+                        udacityGetUserDataApi.call(withPathParameters: [ userIdPathParam: response.account!.key ]) { result in
+                            self.hideProgressIndicator {
+                                if case Result.failure(let error) = result {
+                                    print(error)
+                                    return
+                                }
+                                
+                                AppSession.userInfo = try? result.get()
+                                
+                                self.performSegue(withIdentifier: "toHomeScreen", sender: LoginViewController.self)
+                            }
                         }
-                    }
 
-                case .failure(let error):
-                    print(error)
+                    case .failure(let error):
+                        self.hideProgressIndicator()
+                        print(error)
+                }
             }
         }
     }

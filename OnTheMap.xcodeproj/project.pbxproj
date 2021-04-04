@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20522F162616644000BA0563 /* LinkFetcherScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522F152616644000BA0563 /* LinkFetcherScreenViewController.swift */; };
+		20522F192618D01700BA0563 /* UIViewControllerExtensionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522F182618D01700BA0563 /* UIViewControllerExtensionState.swift */; };
 		20C412AE2605125700837102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412AD2605125700837102 /* AppDelegate.swift */; };
 		20C412B02605125700837102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412AF2605125700837102 /* SceneDelegate.swift */; };
 		20C412B22605125700837102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C412B12605125700837102 /* LoginViewController.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		20522F152616644000BA0563 /* LinkFetcherScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFetcherScreenViewController.swift; sourceTree = "<group>"; };
+		20522F182618D01700BA0563 /* UIViewControllerExtensionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensionState.swift; sourceTree = "<group>"; };
 		20C412AA2605125700837102 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C412AD2605125700837102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C412AF2605125700837102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				20C412CB2607A36200837102 /* UIViewControllerHelpers.swift */,
 				20C412DB260CA49E00837102 /* LoginViewControllerHelpers.swift */,
+				20522F182618D01700BA0563 /* UIViewControllerExtensionState.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				20522F162616644000BA0563 /* LinkFetcherScreenViewController.swift in Sources */,
 				20C413122614D69A00837102 /* PinsTableViewController.swift in Sources */,
 				20C412B02605125700837102 /* SceneDelegate.swift in Sources */,
+				20522F192618D01700BA0563 /* UIViewControllerExtensionState.swift in Sources */,
 				20C412F72612436E00837102 /* UserResponse.swift in Sources */,
 				20C412FB2612464800837102 /* UserLocationResponse.swift in Sources */,
 				20C4130F2614D54300837102 /* MapViewController.swift in Sources */,

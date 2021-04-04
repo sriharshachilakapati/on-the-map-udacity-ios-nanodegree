@@ -96,4 +96,22 @@ extension UIViewController {
             completion()
         }
     }
+    
+    //MARK: - Alerts
+    func showAlertFor<T: Error> (_ error: T, withMessage message: String? = nil) {
+        if !Thread.isMainThread {
+            DispatchQueue.main.async {
+                self.showAlertFor(error)
+            }
+            
+            return
+        }
+        
+        let alertVC = UIAlertController(title: "Error", message: message ?? error.localizedDescription, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            alertVC.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(alertVC, animated: true, completion: nil)
+    }
 }

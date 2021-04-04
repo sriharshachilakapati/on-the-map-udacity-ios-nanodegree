@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                         udacityGetUserDataApi.call(withPathParameters: [ userIdPathParam: response.account!.key ]) { result in
                             self.hideProgressIndicator {
                                 if case Result.failure(let error) = result {
-                                    print(error)
+                                    self.showAlertFor(error)
                                     return
                                 }
                                 
@@ -62,8 +62,9 @@ class LoginViewController: UIViewController {
                         }
 
                     case .failure(let error):
-                        self.hideProgressIndicator()
-                        print(error)
+                        self.hideProgressIndicator {
+                            self.showAlertFor(error, withMessage: "Incorrect login credentials. Please check and try again.")
+                        }
                 }
             }
         }

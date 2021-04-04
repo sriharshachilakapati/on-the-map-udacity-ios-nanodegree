@@ -23,7 +23,7 @@ class OnTheMapTabViewController : UITabBarController {
                             completion()
                             
                         case .failure(let error):
-                            print(error)
+                            self.showAlertFor(error)
                     }
                 }
             }
@@ -42,7 +42,7 @@ class OnTheMapTabViewController : UITabBarController {
                             self.dismiss(animated: true)
                             
                         case .failure(let error):
-                            print(error)
+                            self.showAlertFor(error)
                     }
                 }
             }

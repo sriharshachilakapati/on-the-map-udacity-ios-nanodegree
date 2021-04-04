@@ -29,8 +29,6 @@ class LinkFetcherScreenViewController: UIViewController {
             geocoder.geocodeAddressString(self.location) { (placemarks, error) in
                 self.hideProgressIndicator {
                     guard let place = placemarks?.first?.location?.coordinate else {
-                        print(error!)
-                        
                         let alertVC = UIAlertController(title: "Unable to find location",
                                                         message: "The location you have entered is invalid. Please tap on OK to retry.",
                                                         preferredStyle: .alert)
@@ -87,7 +85,7 @@ class LinkFetcherScreenViewController: UIViewController {
                             self.dismiss(levels: 2, animated: true, completion: nil)
                             
                         case .failure(let error):
-                            print(error)
+                            self.showAlertFor(error)
                     }
                 }
             }

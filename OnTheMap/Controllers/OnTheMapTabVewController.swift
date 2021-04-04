@@ -13,7 +13,7 @@ class OnTheMapTabViewController : UITabBarController {
     
     func fetchLocations(completion: @escaping () -> Void) {
         showProgressIndicator {
-            let request = UserLocationRequest(limit: 100, skip: nil, uniqueKey: nil)
+            let request = UserLocationRequest(limit: 100, skip: nil, uniqueKey: nil, order: "-updatedAt")
             
             udacityGetUserLocationsApi.call(withPayload: request) { result in
                 self.hideProgressIndicator {

@@ -11,6 +11,7 @@ struct UserLocationRequest: Codable {
     let limit: Int?
     let skip: Int?
     let uniqueKey: String?
+    let order: String?
 }
 
 struct PostUserLocationRequest: Codable {

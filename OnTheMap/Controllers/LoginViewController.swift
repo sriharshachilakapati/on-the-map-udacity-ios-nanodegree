@@ -63,7 +63,13 @@ class LoginViewController: UIViewController {
 
                     case .failure(let error):
                         self.hideProgressIndicator {
-                            self.showAlertFor(error, withMessage: "Incorrect login credentials. Please check and try again.")
+                            switch error {
+                                case is DecodingError:
+                                    self.showAlertFor(error, withMessage: "Incorrect login credentials. Please check and try again.")
+                                    
+                                default:
+                                    self.showAlertFor(error)
+                            }
                         }
                 }
             }
